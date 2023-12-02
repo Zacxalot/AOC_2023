@@ -1,4 +1,3 @@
-use itertools::Itertools;
 use std::{fs, time::Instant};
 
 use crate::Answer;
@@ -64,11 +63,7 @@ fn parse_stringy_line(line: &str) -> usize {
                 last = c.to_digit(10).unwrap() as usize;
             }
         } else {
-            let next = line
-                .chars()
-                .skip(pos)
-                .take_while(|c| !c.is_ascii_digit())
-                .collect::<String>();
+            let next = &line[pos..];
 
             STRING_DIGITS.iter().enumerate().for_each(|(i, s)| {
                 if next.starts_with(s) {
