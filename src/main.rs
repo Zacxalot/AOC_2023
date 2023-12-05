@@ -8,7 +8,7 @@ use crate::{
 };
 
 fn main() {
-    let answers: Vec<Answer> = vec![days::day_1::execute()];
+    let answers: Vec<Answer> = vec![days::day_1::execute(), days::day_2::execute()];
 
     let (duration, no_io_duration) = total_duration(&answers);
 
